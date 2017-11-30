@@ -1,0 +1,9 @@
+FROM aishwaryashinde/dockerfile:baseimage
+
+RUN python3 -m nltk.downloader all
+ADD ./service/ /ml/service/
+RUN cd /ml/service
+WORKDIR "/ml/service"
+RUN chmod 777 /ml/service
+EXPOSE 5000
+CMD ["python3", "flask_app.py"]

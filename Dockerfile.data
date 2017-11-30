@@ -1,0 +1,3 @@
+FROM busybox:latest
+ADD ./data/ /data
+CMD "tail" "-f" "/dev/null"
